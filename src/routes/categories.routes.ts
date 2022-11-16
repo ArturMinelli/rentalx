@@ -1,12 +1,13 @@
-import { request, response, Router } from 'express'
+import { Router } from 'express'
+import { v4 as uuidv4 } from 'uuid'
 
 const categoriesRoutes = Router()
 
-categoriesRoutes.post('/categories', (request, response) => {
+categoriesRoutes.post('/', (request, response) => {
   const { name, description } = request.body
 
   const newCategory = {
-    id: new Date().toISOString(),
+    id: uuidv4(),
     name,
     description,
     createdAt: new Date().toISOString()
