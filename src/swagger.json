@@ -7,5 +7,43 @@
     "contact": {
       "email": "arturminelli@gmail.com"
     }
+  },
+  "paths": {
+    "/categories": {
+      "post": {
+        "tags": ["Category"],
+        "summary": "Creates a new category",
+        "description": "Creates a new category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "object": "Category",
+                "properties": {
+                  "name" : {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Example Name",
+                  "description": "Example Description"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category already exists"
+          }
+        }
+      }
+    }
   }
 }
