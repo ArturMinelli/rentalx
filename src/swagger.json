@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RentalX",
+    "description": "An api for Rental Car services",
+    "version": "1.0.0",
+    "contact": {
+      "email": "arturminelli@gmail.com"
+    }
+  }
+}
