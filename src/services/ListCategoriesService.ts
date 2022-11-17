@@ -1,7 +1,7 @@
-import { ICategoryRepository } from "../repositories/ICategoryRepository";
+import { ICategoriesRepository } from "../repositories/ICategoriesRepository";
 
 export class ListCategoriesService {
-  constructor(private categoriesRepository: ICategoryRepository) {
+  constructor(private categoriesRepository: ICategoriesRepository) {
     this.categoriesRepository = categoriesRepository;
   }
 
