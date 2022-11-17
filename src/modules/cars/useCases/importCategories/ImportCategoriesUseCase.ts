@@ -22,12 +22,8 @@ export class ImportCategoriesUseCase {
 
       parseFile.on('data', async ([name, description]) => {
 
-        const categoryAlreadyExists = this.categoriesRepository.findByName(name)
-        if(categoryAlreadyExists) {
-          throw new Error(`Category ${name} already exists`)
-        }
+      loadedCategories.push({ name, description })
 
-        loadedCategories.push({ name, description })
       })
       .on('end', () => {
         resolve(loadedCategories)
@@ -40,6 +36,11 @@ export class ImportCategoriesUseCase {
 
   async execute(file: Express.Multer.File): Promise<void> {
     const categories = await this.loadCategories(file)
-    console.log(categories)
+    categories.map(({name, description}) => {
+      const categoryAlreadyExists = this.categoriesRepository.findByName(name)
+      if(!categoryAlreadyExists) {
+        this.categoriesRepository.create({ name, description })
+      }
+    })
   }
 }
