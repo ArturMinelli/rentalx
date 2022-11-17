@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { CategoriesRepository } from '../../repositories/CategoriesRepository'
+import { CategoriesRepository } from '../../repositories/implementations/CategoriesRepository'
 import { CreateCategoryUseCase } from './CreateCategoryUseCase'
 
 export class CreateCategoryController {
