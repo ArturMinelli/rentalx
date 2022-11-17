@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import { SpecificationsRepository } from '../repositories/SpecificationsRepository'
-import { CreateSpecificationService } from '../services/CreateSpecificationService'
-import { ListSpecificationsService } from '../services/ListSpecificationsService'
+import { SpecificationsRepository } from '../modules/cars/repositories/SpecificationsRepository'
+import { CreateSpecificationService } from '../modules/cars/services/CreateSpecificationService'
+import { ListSpecificationsService } from '../modules/cars/services/ListSpecificationsService'
 
 export const specificationsRoutes = Router()
 const specificationsRepository = new SpecificationsRepository()
@@ -19,5 +19,5 @@ specificationsRoutes.get('/', (request, response) => {
   const listSpecificationsService = new ListSpecificationsService(specificationsRepository)
   const specifications = listSpecificationsService.execute()
 
-  response.status(201).json(specifications)
+  response.status(200).json(specifications)
 })
