@@ -1,6 +1,6 @@
-import { ISpecificationsRepository } from "../repositories/ISpecificationsRepository";
+import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository";
 
-export class ListSpecificationsService {
+export class ListSpecificationsUseCase {
   constructor(private specificationsRepository: ISpecificationsRepository) {
     this.specificationsRepository = specificationsRepository
   }
