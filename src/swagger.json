@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "RentalX",
-    "description": "An api for Rental Car services",
+    "title": "RentX",
+    "description": "An api for Car Rental services",
     "version": "1.0.0",
     "contact": {
       "email": "arturminelli@gmail.com"
@@ -13,7 +13,6 @@
       "post": {
         "tags": ["Category"],
         "summary": "Creates a new category",
-        "description": "Creates a new category",
         "requestBody": {
           "content": {
             "application/json": {
@@ -47,7 +46,6 @@
       "get": {
         "tags": ["Category"],
         "summary": "Lists all of the registered categories",
-        "description": "Lists all of the registered categories",
         "responses": {
           "200": {
             "description": "Success",
@@ -72,6 +70,27 @@
           }
         }
       }
+    },
+    "/categories/import": {
+      "post": {
+        "tags": ["Category"],
+        "summary": "Imports categories from provided csv file",
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
     }
+
   }
 }
