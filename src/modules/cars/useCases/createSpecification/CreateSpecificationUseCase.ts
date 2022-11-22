@@ -9,8 +9,8 @@ export class CreateSpecificationUseCase {
   ) {}
 
   async execute({ name, description }: CreateSpecificationDTO) {
-
     const specificationAlreadyExists = await this.specificationsRepository.findByName(name)
+
     if(specificationAlreadyExists) {
       throw new Error(`Specification ${name} already exists`)
     }
