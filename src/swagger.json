@@ -39,7 +39,21 @@
             "description": "Created"
           },
           "400": {
-            "description": "Category already exists"
+            "description": "Category already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error" : {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "error": "Category 'Category Name' already exists"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -121,7 +135,21 @@
             "description": "Created"
           },
           "400": {
-            "description": "Specification already exists"
+            "description": "Specification already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error" : {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "error": "Specification 'Specification Name' already exists"
+                  }
+                }
+              }
+            }
           }
         }
       },
