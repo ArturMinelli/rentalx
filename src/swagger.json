@@ -38,7 +38,7 @@
           "201": {
             "description": "Created"
           },
-          "500": {
+          "400": {
             "description": "Category already exists"
           }
         }
@@ -90,7 +90,41 @@
           }
         }
       }
+    },
+    "/specifications": {
+      "post": {
+        "tags": ["Specification"],
+        "summary": "Creates a new specification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "object": "Specification",
+                "properties": {
+                  "name" : {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Example Name",
+                  "description": "Example Description"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Specification already exists"
+          }
+        }
+      }
     }
-
   }
 }
