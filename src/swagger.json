@@ -17,19 +17,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "object": "Category",
-                "properties": {
-                  "name" : {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "example": {
-                  "name": "Example Name",
-                  "description": "Example Description"
-                }
+                "$ref": "#/definitions/Category"
               }
             }
           }
@@ -119,19 +107,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "object": "Specification",
-                "properties": {
-                  "name" : {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "example": {
-                  "name": "Example Name",
-                  "description": "Example Description"
-                }
+                "$ref": "#/definitions/Specification"
               }
             }
           }
@@ -185,6 +161,38 @@
             }
           }
         }
+      }
+    }
+  },
+  "definitions": {
+    "Category": {
+      "object": "Category",
+      "properties": {
+        "name" : {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "name": "Example Name",
+        "description": "Example Description"
+      }
+    },
+    "Specification": {
+      "object": "Specification",
+      "properties": {
+        "name" : {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "name": "Example Name",
+        "description": "Example Description"
       }
     }
   }
