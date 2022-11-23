@@ -17,6 +17,6 @@ container.register<(ISpecificationsRepository)>(
 )
 
 container.register<(IUsersRepository)>(
-  "SpecificationsRepository",
+  "UsersRepository",
   UsersRepository
 )
