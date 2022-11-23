@@ -23,4 +23,12 @@ export class UsersRepository implements IUsersRepository {
       }
     })
   }
+
+  async findById(id: string): Promise<User> {
+    return await this.repository.findOne({
+      where: {
+        id
+      }
+    })
+  }
 }
