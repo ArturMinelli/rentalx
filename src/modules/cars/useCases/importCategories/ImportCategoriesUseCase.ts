@@ -40,6 +40,7 @@ export class ImportCategoriesUseCase {
 
   async execute(file: Express.Multer.File): Promise<void> {
     const categories = await this.loadCategories(file)
+
     categories.map(async ({name, description}) => {
       const categoryAlreadyExists = await this.categoriesRepository.findByName(name)
       if(!categoryAlreadyExists) {
