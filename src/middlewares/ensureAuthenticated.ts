@@ -26,6 +26,9 @@ export async function ensureAuthenticated(request: Request, response: Response, 
       throw new AppError(`User with id '${user_id}' could not be found`, 401)
     }
 
+    request.user = {
+      id: user_id,
+    }
     next()
   }
   catch (error) {
