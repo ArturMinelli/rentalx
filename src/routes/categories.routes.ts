@@ -6,9 +6,11 @@ import { CreateCategoryController } from '../modules/cars/useCases/createCategor
 import { ImportCategoriesController } from '../modules/cars/useCases/importCategories/ImportCategoriesController'
 import { ListCategoriesController } from '../modules/cars/useCases/listCategories/ListCategoriesController'
 
+import uploadConfig from '../config/upload'
+
 export const categoriesRoutes = Router()
 
-const upload = multer({ dest: './tmp' })
+const upload = multer(uploadConfig.upload('./tmp'))
 
 const createCategoryController = new CreateCategoryController()
 const importCategoriesController = new ImportCategoriesController()
