@@ -1,6 +1,6 @@
 import { getRepository, Repository } from "typeorm";
-import { Category } from "../../infra/typeorm/entities/Category";
-import { ICategoriesRepository } from "../ICategoriesRepository";
+import { Category } from "../entities/Category";
+import { ICategoriesRepository } from "../../../repositories/ICategoriesRepository";
 
 export class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>

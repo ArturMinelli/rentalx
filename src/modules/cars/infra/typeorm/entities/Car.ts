@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm'
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm'
+import { Category } from './Category';
 
 @Entity("cars")
 export class Car {
@@ -16,7 +17,7 @@ export class Car {
   daily_rate: number;
 
   @Column()
-  available: boolean;
+  available: boolean = true;
 
   @Column()
   license_plate: string;
@@ -27,8 +28,13 @@ export class Car {
   @Column()
   brand: string;
 
+  @ManyToOne(() => Category)
+  @JoinColumn({ name: 'category_id' })
+  category: Category;
+
   @Column()
   category_id: string;
+
 
   @CreateDateColumn()
   created_at: Date;
