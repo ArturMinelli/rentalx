@@ -7,10 +7,12 @@ import { router } from './routes'
 
 import swaggerFile from '../../../swagger.json'
 
-import "../database"
+import createConnection from '../database'
 
 import '../../container'
 import { AppError } from "../../errors/AppError";
+
+createConnection()
 
 const app = express()
 
